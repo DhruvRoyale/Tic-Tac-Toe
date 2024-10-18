@@ -46,8 +46,10 @@ function hovereffect() {
 function hovereffectclear() {
     // Remove the hover effect when the mouse leaves the button
     let button_unhovered = document.getElementById(event.srcElement.id);
-    button_unhovered.style.backgroundImage = "url(Transparent.png)";
-    button_unhovered.style.opacity = "100%";
+    if (button_unhovered.style.opacity == "50%") {
+        button_unhovered.style.backgroundImage = "url(Transparent.png)";
+        button_unhovered.style.opacity = "100%";
+    }
 }
 
 function game() {
