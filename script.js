@@ -33,20 +33,24 @@ function hovereffect() {
     // Add a hover effect on the buttons in the grid to show a preview of where the X or O will be placed
     if (turn % 2 === 0) {
         let button_hovered = document.getElementById(event.srcElement.id);
-        button_hovered.style.backgroundImage = "url(Transparent_X.png)";
-        button_hovered.style.opacity = "50%";
+        if (!button_hovered.disabled) {
+            button_hovered.style.backgroundImage = "url(Transparent_X.png)";
+            button_hovered.style.opacity = "50%";
+        }
     }
     else {
         let button_hovered = document.getElementById(event.srcElement.id);
-        button_hovered.style.backgroundImage = "url(Transparent_O.png)";
-        button_hovered.style.opacity = "50%";
+        if (!button_hovered.disabled) {
+            button_hovered.style.backgroundImage = "url(Transparent_O.png)";
+            button_hovered.style.opacity = "50%";
+        }
     }
 }
 
 function hovereffectclear() {
     // Remove the hover effect when the mouse leaves the button
     let button_unhovered = document.getElementById(event.srcElement.id);
-    if (button_unhovered.style.opacity == "50%") {
+    if (!button_unhovered.disabled) {
         button_unhovered.style.backgroundImage = "url(Transparent.png)";
         button_unhovered.style.opacity = "100%";
     }
